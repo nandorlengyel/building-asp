@@ -66,20 +66,20 @@ HIGH >= O :- category_include_UK(F,W,R,O), catUK(F,W,R,LOW,HIGH).
 LOW <= O  :- category_include_UK(F,W,R,O), catUK(F,W,R,LOW,HIGH).
 
 % We may want to set explicit lower and upper bounds for categories.
-H <= HM :- cat_max_HU(F,W,R,HM), catHU(F,W,R,L,H).
-L >= LM :- cat_min_HU(F,W,R,LM), catHU(F,W,R,L,H).
+% H <= HM :- cat_max_HU(F,W,R,HM), catHU(F,W,R,L,H).
+% L >= LM :- cat_min_HU(F,W,R,LM), catHU(F,W,R,L,H).
 
-H <= HM :- cat_max_UK(F,W,R,HM), catUK(F,W,R,L,H).
-L >= LM :- cat_min_UK(F,W,R,LM), catUK(F,W,R,L,H).
+% H <= HM :- cat_max_UK(F,W,R,HM), catUK(F,W,R,L,H).
+% L >= LM :- cat_min_UK(F,W,R,LM), catUK(F,W,R,L,H).
 
 
 % Transferring relative interval positions from the UK model to the Hungarian one.
 LHU1 < LHU2 :- lt(LUK1,LUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
-LHU1 = LHU2 :- eq(LUK1,LUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
+% LHU1 = LHU2 :- eq(LUK1,LUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
 LHU1 > LHU2 :- gt(LUK1,LUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
 
 HHU1 < HHU2 :- lt(HUK1,HUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
-HHU1 = HHU2 :- eq(HUK1,HUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
+% HHU1 = HHU2 :- eq(HUK1,HUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
 HHU1 > HHU2 :- gt(HUK1,HUK2),catUK(F1,W1,R1,LUK1,HUK1),catUK(F2,W2,R2,LUK2,HUK2),catHU(F1,W1,R1,LHU1,HHU1),catHU(F2,W2,R2,LHU2,HHU2).
 
 % Inerval lengths - UK and HU
