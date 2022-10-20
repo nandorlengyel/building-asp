@@ -94,8 +94,8 @@ category_include(F,W,R,MH,O) :- category_include_UK(F,W,R,MH,O).
 HIGH >= O :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
 LOW <= O  :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
 
-HIGH >= O :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
-LOW <= O  :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
+% HIGH >= O :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
+% LOW <= O  :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
 
 % % The same for UK observations.
 % HIGH >= O :- category_include_UK(F,W,R,O), catUK(F,W,R,LOW,HIGH).
@@ -155,7 +155,7 @@ ilength_sumsquare_HU(L) :- L = #sum{ S*S, F,W,R,MH : ilength_HU(F,W,R,MH,S) }.
 
 % #minimize { Y@1: idiff_square(Y) }.
 #minimize { Y@1: ilength_sumsquare_HU(Y) }.
-% #minimize { Y@1: ilength_sum_HU(Y) }.
+#minimize { Y@2: ilength_sum_HU(Y) }.
 
 %Display
 #show catHU/6.
