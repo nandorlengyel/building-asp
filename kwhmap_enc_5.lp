@@ -140,8 +140,6 @@ LOW <= O  :- category_include(F,W,R,MH,A,O), catHU(F,W,R,MH,A,LOW,HIGH).
 % ilength_UK(F,W,R,S) :- S = H - L, catUK(F,W,R,L,H).
 ilength_HU(F,W,R,MH,A,S) :- S = H - L, catHU(F,W,R,MH,A,L,H).
 
-
-
 % % sum of interval lengths and square sum of interval lengths for the UK
 % ilength_sum_UK(L) :- L = #sum{ S: ilength_UK(F,W,R,S) }.
 % ilength_sumsquare_UK(L) :- L = #sum{ S*S : ilength_UK(F,W,R,S) }.
@@ -170,8 +168,8 @@ ilength_sumsquare_HU(L) :- L = #sum{ S*S, F,W,R,MH,A : ilength_HU(F,W,R,MH,A,S) 
 
 
 % #minimize { Y@1: idiff_square(Y) }.
-#minimize { Y@1: ilength_sumsquare_HU(Y) }.
-#minimize { Y@2: ilength_sum_HU(Y) }.
+#minimize { Y@2: ilength_sumsquare_HU(Y) }.
+#minimize { Y@1: ilength_sum_HU(Y) }.
 
 %Display
 #show catHU/7.
