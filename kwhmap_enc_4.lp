@@ -86,9 +86,9 @@ L1 >= L2 :- catHU(F1,W1,R1,MH1,L1,H1), catHU(F2,W2,R2,MH2,L2,H2), lowercat(F1,W1
 
 % Direct HU observations have to be adhered to.
 
-category_include(F,W,R,MH,O) :- category_include_UK(F,W,R,MH,O).
+% category_include(F,W,R,MH,O) :- category_include_UK(F,W,R,MH,O).
 category_include(F,W,R,MH,O) :- category_include_HU(F,W,R,MH,O).
-category_include(F,W,R,MH,HU_O) :- category_include_HU(F,W,R,MH,HU_O), category_include_UK(F,W,R,MH,UK_O).
+% category_include(F,W,R,MH,HU_O) :- category_include_HU(F,W,R,MH,HU_O), category_include_UK(F,W,R,MH,UK_O).
 
 HIGH >= O :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
 LOW <= O  :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
@@ -149,8 +149,8 @@ ilength_sumsquare_HU(L) :- L = #sum{ S*S, F,W,R,MH : ilength_HU(F,W,R,MH,S) }.
 
 
 % #minimize { Y@1: idiff_square(Y) }.
-% #minimize { Y@2: ilength_sumsquare_HU(Y) }.
-% #maximize { Y@1: ilength_sum_HU(Y) }.
+#minimize { Y@2: ilength_sumsquare_HU(Y) }.
+#maximize { Y@1: ilength_sum_HU(Y) }.
 
 %Display
 #show catHU/6.
