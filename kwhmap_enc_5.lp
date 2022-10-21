@@ -109,7 +109,6 @@ L1 >= L2 :- catHU(F1,W1,R1,MH1,A1,L1,H1), catHU(F2,W2,R2,MH2,A2,L2,H2), lowercat
 category_include(F,W,R,MH,A,O) :- category_include_HU(F,W,R,MH,A,O).
 % category_include(F,W,R,MH,HU_O) :- category_include_HU(F,W,R,MH,HU_O), category_include_UK(F,W,R,MH,UK_O).
 
-
 HIGH >= O :- category_include(F,W,R,MH,A,O), catHU(F,W,R,MH,A,LOW,HIGH).
 LOW <= O  :- category_include(F,W,R,MH,A,O), catHU(F,W,R,MH,A,LOW,HIGH).
 

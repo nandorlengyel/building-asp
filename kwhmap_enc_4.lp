@@ -149,8 +149,8 @@ ilength_sumsquare_HU(L) :- L = #sum{ S*S, F,W,R,MH : ilength_HU(F,W,R,MH,S) }.
 
 
 % #minimize { Y@1: idiff_square(Y) }.
-#minimize { Y@2: ilength_sumsquare_HU(Y) }.
-#maximize { Y@1: ilength_sum_HU(Y) }.
+% #minimize { Y@2: ilength_sumsquare_HU(Y) }.
+% #maximize { Y@1: ilength_sum_HU(Y) }.
 
 %Display
 #show catHU/6.
