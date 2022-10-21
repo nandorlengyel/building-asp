@@ -86,8 +86,8 @@ L1 >= L2 :- catHU(F1,W1,R1,MH1,L1,H1), catHU(F2,W2,R2,MH2,L2,H2), lowercat(F1,W1
 
 % Direct HU observations have to be adhered to.
 
-% category_include(F,W,R,MH,O) :- category_include_UK(F,W,R,MH,O).
-category_include(F,W,R,MH,O) :- category_include_HU(F,W,R,MH,O).
+category_include(F,W,R,MH,O) :- category_include_UK(F,W,R,MH,O).
+% category_include(F,W,R,MH,O) :- category_include_HU(F,W,R,MH,O).
 % category_include(F,W,R,MH,HU_O) :- category_include_HU(F,W,R,MH,HU_O), category_include_UK(F,W,R,MH,UK_O).
 
 HIGH >= O :- category_include(F,W,R,MH,O), catHU(F,W,R,MH,LOW,HIGH).
